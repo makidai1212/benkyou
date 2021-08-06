@@ -9,7 +9,7 @@ class User < ApplicationRecord
                   format: { with: VALID_EMAIL_REGEX },
                   uniqueness: { case_sensitive: true }
 
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   # パスワードのいろんな機能が使えるようになる
   has_secure_password
 
@@ -37,4 +37,6 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
+
+
 end
