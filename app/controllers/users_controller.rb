@@ -7,8 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save 
       flash[:success] = "User create!"
+      log_in @user
       redirect_to @user
     else
+      flash.now[:danger] = "メールアドレスかパスワードの内容が正しくありません"
       render "new"
     end
   end
