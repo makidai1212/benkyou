@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get '/login',to: 'sessions#new'
+  post '/login',to: 'sessions#create'
+  delete '/logout',to: 'sessions#destroy'
   # 7つのアクション一気作成の裏技。new,show,index,create,edit,update,destroy
   resources :users
   # 7つのアクションしてるけども・・・
