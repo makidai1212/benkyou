@@ -12,6 +12,8 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   # パスワードのいろんな機能が使えるようになる
   has_secure_password
+  # CarrirWaveを使ったプロフィール画像投稿機能用
+  mount_uploader :image, ImageUploader
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
