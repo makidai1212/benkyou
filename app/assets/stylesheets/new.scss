@@ -1,0 +1,132 @@
+.registration-container {
+  width: 800px;
+  height: 650px;
+  padding: 30px 0;
+  margin: 30px auto;
+  background: #fff;
+   .registration-header {
+     width: 200px;
+     margin: 0 auto;
+     height: 30px;
+     line-height: 30px;
+     text-align: center;
+     h3 {
+       font-size: 30px;
+     }
+   }
+   .registration-view-part {
+     width: 480px;
+     height: 550px;
+     margin: 30px auto;
+     overflow: hidden;
+     border: 1px solid black;
+     .registration-form {
+       width: 2000px;
+       height: 440px;
+       .clearfix::after {
+         content: "";
+         display: block;
+         clear: both;
+       }
+       .first-step-registration {
+         border-box: box-sizing;
+         width: 400px;
+         height: 500px;
+         padding: 40px;
+         float: left;
+         .field {
+           width: 400px;
+           height: 70px;
+           margin: 0 30px 30px 30px;
+           .field-label {
+             margin-bottom: 10px;
+           }
+           .field-input {
+             width: 80%;
+             input {
+               width: 90%;
+               height: 30px;
+               padding: 5px 10px;
+               border-radius: 5px;
+               border: 1px solid black;            
+             }
+             select {
+               width: 100px;
+               height: 40px;
+             }
+           }
+           p {
+             color: red;
+           }
+         }
+         .btn {
+           width: 100px;
+           height: 40px;
+           margin: 50px auto 30px auto;
+           display: block;
+           border-radius: 3px;
+           font-size: 20px;
+           border: 1px solid black;
+           text-align: center;
+           line-height: 40px;
+           cursor: pointer;
+         }
+       }
+       .second-step-registration,
+       .third-step-registration {
+         border-box: box-sizing;
+         width: 400px;
+         height: 400px;
+         padding: 40px;
+         float: left;
+         .field {
+           width: 400px;
+           height: 100px;
+           margin: 0 30px 30px 30px;
+           .field-label {
+             margin-bottom: 10px;
+           }
+           .field-input {
+             width: 80%;
+             input {
+               width: 90%;
+               height: 30px;
+               padding: 5px 10px;
+               border-radius: 5px;
+               border: 1px solid black;            
+             }
+             select {
+               width: 100px;
+               height: 40px;
+             }
+           }
+           p {
+             color: red;
+           }
+         }
+         .btn {
+           width: 100px;
+           height: 40px;
+           margin: 0 auto;
+           display: block;
+           border-radius: 3px;
+           font-size: 20px;
+           border: 1px solid black;
+           text-align: center;
+           line-height: 40px;
+           cursor: pointer;
+         }
+         .registration-submit-btn {
+           margin: 0 auto;
+           display: block;
+           border-radius: 3px;
+           font-size: 20px;
+           border: 1px solid black;
+           text-align: center;
+           line-height: 40px;
+           padding: 5px;
+         }
+       }
+     }
+   }
+ }

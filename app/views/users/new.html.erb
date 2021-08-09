@@ -1,26 +1,64 @@
-<% provide(:title, '登録') %>
-<h1>登録</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @user, local: true) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :name, "名前" %>
-      <%= f.text_field :name, class: 'form-control' %>
-
-      <%= f.label :email, "メールアドレス" %>
-      <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :password, "パスワード" %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :password_confirmation, "パスワードの確認" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-      <%= f.label :image, "プロフィール画像" %>
-      <%= f.file_field :image %>
-
-      <%= f.submit "次へ進む", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+.registration-container
+  .registration-header
+    %h3
+      registration
+  .registration-view-part
+    = form_for @user, html: {class: 'registration-form clearfix'} do |f|
+      .first-step-registration
+        .field
+          .field-label
+            = f.label '名前(名)'
+          .field-input#first_name_input
+            = f.text_field :first_name, id: 'first_name'
+        .field
+          .field-label
+            = f.label '名前(性)'
+          .field-input#family_name_input
+            = f.text_field :family_name, id: 'family_name'
+        .field
+          .field-label
+            = f.label 'ニックネーム'
+          .field-input#nickname_input
+            = f.text_field :nickname, id: 'nickname'
+        .field
+          .field-label
+            = f.label '電話番号'
+          .field-input#phone_number_input
+            = f.text_field :phone_number, id: 'phone_number'
+        .btn#first-step-btn
+          next
+      .second-step-registration
+        .field
+          .field-label
+            = f.label '性別'
+          .field-input
+            = f.select :sex, { '男の子': :male, '女の子': :female }
+        .field
+          .field-label
+            = f.label 'パスワード'
+          .field-input#password_input
+            = f.password_field :password, id: 'password'
+        .field
+          .field-label
+            = f.label 'パスワード（確認）'
+          .field-input#password_confirmation_input
+            = f.password_field :password_confirmation, id: 'password_confirmation'
+        .btn#second-step-btn
+          next
+      .third-step-registration
+        .field
+          .field-label
+            = f.label '学年'
+          .field-input#grade
+            = f.select :grade, {'大学1年': :grade_1, '大学2年': :grade_2,'大学3年': :grade_3,'大学4年': :grade_4 }
+        .field
+          .field-label
+            = f.label '大学'
+          .field-input#university_input
+            = f.text_field :university, id: 'university'
+        .field
+          .field-label
+            = f.label 'Eメールアドレス'
+          .field-input#email_input
+            = f.email_field :email, id: 'email'
+        = f.submit 'create account', class: 'registration-submit-btn'
