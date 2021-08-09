@@ -1,19 +1,14 @@
-<% provide(:title, @user.name) %>
+<% provide(:title, '学習計画') %>
+<h1>学習計画</h1>
 
 <div class="row">
-    <section class="user_info">
-      <h1>
-      <% if @user.image? %>
-        <%= image_tag @user.image.thumb.url , class: "big-user-icon" %>
-      <% else %>
-        <%= image_tag "default.jpg", alt: "user-icon", class: "user-icon" %>
-      <% end %>
-      <br>
-        <%= @user.name %>
-      </h1>
-    </section>
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @project, local: true) do |f| %>
+      <%= f.label :step_1, "Step 1" %>
+      <%= f.text_field :step_1, class: 'form-control' %>
 
-    <table>
+      <%= f.submit "次へ進む", class: "btn btn-primary" %>
+          <table>
       <tr>
         <th>Step 1</th>
         <td>テーブル株式会社</td>
@@ -39,4 +34,6 @@
         <td>000-000-0000</td>
       </tr>
     </table>
+    <% end %>
+  </div>
 </div>

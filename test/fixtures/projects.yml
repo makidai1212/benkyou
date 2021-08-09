@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goal: MyString
+  step_1: MyString
+  step_2: MyString
+  step_3: MyString
+  step_4: MyString
+  step_5: MyString
+  step_6: MyString
+
+two:
+  goal: MyString
+  step_1: MyString
+  step_2: MyString
+  step_3: MyString
+  step_4: MyString
+  step_5: MyString
+  step_6: MyString
