@@ -13,30 +13,34 @@
       </h1>
     </section>
 
+    <div class="anim-box">
+    <h4><%= "#{@project.goal}" %> コースを選択している！</h4>
+    </div>
+
     <table>
       <tr>
         <th>Step 1</th>
-        <td>テーブル株式会社</td>
+        <td><%= @project.step_1 %></td>
       </tr>
       <tr>
         <th>Step 2</th>
-        <td>1940年</td>
+        <td><%= @project.step_2 %></td>
       </tr>
       <tr>
         <th>Step 3</th>
-        <td>500人</td>
+        <td><%= @project.step_3 %></td>
       </tr>
       <tr>
         <th>Step 4</th>
-        <td>000-000-0000</td>
+        <td><%= @project.step_4 %></td>
       </tr>
       <tr>
         <th>Step 5</th>
-        <td>000-000-0000</td>
+        <td><%= @project.step_5 %></td>
       </tr>
       <tr>
         <th>Step 6</th>
-        <td>000-000-0000</td>
+        <td><%= @project.step_6 %></td>
       </tr>
     </table>
 

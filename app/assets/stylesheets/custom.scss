@@ -334,3 +334,18 @@ table td{
     transform:translateY(0px);
   }
 }
+
+/* ボックスのやつ */
+.anim-box {
+  margin:2em auto;
+  background: linear-gradient(to right, #362ae0 0%,#3b79cc 50%,#42d3ed 100%);
+  border-radius: 5px;
+  max-width: 400px;
+  height: 60px;
+  position: relative;
+  width: 30%;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+}

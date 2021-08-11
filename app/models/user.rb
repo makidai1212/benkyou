@@ -15,7 +15,7 @@ class User < ApplicationRecord
   # CarrirWaveを使ったプロフィール画像投稿機能用
   mount_uploader :image, ImageUploader
   # たくさんのプロジェクトを持つ
-  has_many :projects
+  has_many :projects,  dependent: :destroy
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

@@ -22,6 +22,7 @@ before_action :admin_user, only: :destroy
 
   def show
     @user = User.find(params[:id])
+    @project = Project.find_by(user_id: current_user)
   end
 
   def edit 

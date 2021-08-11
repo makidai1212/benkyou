@@ -5,7 +5,6 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = User.find(params[:id])
   end
 
   def index
@@ -13,7 +12,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-      @project = Project.new(project_params)
+      @project = current_user.projects.build(project_params)
       @project.save 
       flash[:success] = "学習内容を登録しました!"
       redirect_to root_path
