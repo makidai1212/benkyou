@@ -1,0 +1,49 @@
+<% provide(:title, '学習計画編集') %>
+<h1>学習計画編集</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @project, local: true) do |f| %>
+      <%= f.label :step_1, "Step 1" %>
+      <%= f.text_field :step_1, class: 'form-control' %>
+      <%= f.label :step_1, "Step 2" %>
+      <%= f.text_field :step_1, class: 'form-control' %>
+      <%= f.label :step_1, "Step 3" %>
+      <%= f.text_field :step_1, class: 'form-control' %>
+      <%= f.label :step_1, "Step 4" %>
+      <%= f.text_field :step_1, class: 'form-control' %>
+      <%= f.label :step_1, "Step 5" %>
+      <%= f.text_field :step_1, class: 'form-control' %>
+      <%= f.label :step_1, "Step 6" %>
+      <%= f.text_field :step_1, class: 'form-control' %>
+
+      <%= f.submit "次へ進む", class: "btn btn-primary" %>
+          <table>
+      <tr>
+        <th>Step 1</th>
+        <td>テーブル株式会社</td>
+      </tr>
+      <tr>
+        <th>Step 2</th>
+        <td>1940年</td>
+      </tr>
+      <tr>
+        <th>Step 3</th>
+        <td>500人</td>
+      </tr>
+      <tr>
+        <th>Step 4</th>
+        <td>000-000-0000</td>
+      </tr>
+      <tr>
+        <th>Step 5</th>
+        <td>000-000-0000</td>
+      </tr>
+      <tr>
+        <th>Step 6</th>
+        <td>000-000-0000</td>
+      </tr>
+    </table>
+    <% end %>
+  </div>
+</div>

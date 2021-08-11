@@ -1,39 +1,121 @@
 <% provide(:title, '学習計画') %>
-<h1>学習計画</h1>
+<h1>学習コース選択</h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @project, local: true) do |f| %>
-      <%= f.label :step_1, "Step 1" %>
-      <%= f.text_field :step_1, class: 'form-control' %>
+  <div class="col-md-8 col-md-offset-3">
+      <div class="tab">
+        <input type="radio" name="tab" id="meat1" checked>
+        <label for="meat1">Webコース</label>
+        <input type="radio" name="tab" id="meat2">
+        <label for="meat2">システムコース</label>
+        <input type="radio" name="tab" id="meat3">
+        <label for="meat3">IT基礎コース</label>
+        <div class="foods">
+          <ul>
+            <table>
+            <tr>
+              <th>Step 1</th>
+              <td>HTML</td>
+            </tr>
+            <tr>
+              <th>Step 2</th>
+              <td>CSS</td>
+            </tr>
+            <tr>
+              <th>Step 3</th>
+              <td>JavaScrypt</td>
+            </tr>
+            <tr>
+              <th>Step 4</th>
+              <td>Ruby</td>
+            </tr>
+            <tr>
+              <th>Step 5</th>
+              <td>PHP</td>
+            </tr>
+            <tr>
+              <th>Step 6</th>
+              <td>Git</td>
+            </tr>
 
-      <%= f.submit "次へ進む", class: "btn btn-primary" %>
-          <table>
-      <tr>
-        <th>Step 1</th>
-        <td>テーブル株式会社</td>
-      </tr>
-      <tr>
-        <th>Step 2</th>
-        <td>1940年</td>
-      </tr>
-      <tr>
-        <th>Step 3</th>
-        <td>500人</td>
-      </tr>
-      <tr>
-        <th>Step 4</th>
-        <td>000-000-0000</td>
-      </tr>
-      <tr>
-        <th>Step 5</th>
-        <td>000-000-0000</td>
-      </tr>
-      <tr>
-        <th>Step 6</th>
-        <td>000-000-0000</td>
-      </tr>
-    </table>
-    <% end %>
+            </table>
+          </ul>
+          <ul>
+            <table>
+            <tr>
+              <th>Step 1</th>
+              <td>基本情報技術者</td>
+            </tr>
+            <tr>
+              <th>Step 2</th>
+              <td>ava Level 1</td>
+            </tr>
+            <tr>
+              <th>Step 3</th>
+              <td>Git</td>
+            </tr>
+            <tr>
+              <th>Step 4</th>
+              <td>SQL</td>
+            </tr>
+            <tr>
+              <th>Step 5</th>
+              <td>ava Level 2</td>
+            </tr>
+            <tr>
+              <th>Step 6</th>
+              <td>ava Level 3</td>
+            </tr>
+          </table>
+          </ul>
+          <ul>
+            <table>
+            <tr>
+              <th>Step 1</th>
+              <td>ITパスポート</td>
+            </tr>
+            <tr>
+              <th>Step 2</th>
+              <td>基本情報技術者</td>
+            </tr>
+            <tr>
+              <th>Step 3</th>
+              <td>Linux</td>
+            </tr>
+            <tr>
+              <th>Step 4</th>
+              <td>AWS</td>
+            </tr>
+            <tr>
+              <th>Step 5</th>
+              <td>Git</td>
+            </tr>
+            <tr>
+              <th>Step 6</th>
+              <td>Java基礎</td>
+            </tr>
+          </table>
+          </ul>
+        </div>
+      </div>
+        <%= form_with(model: @project, local: true) do |f| %>
+ 
+            <%= f.label :goal, "goal" %>
+            <%= f.text_field :goal, class: 'form-control', id: "goal", value: "web" %>
+            <%= f.label :step_1, "Step 1" %>
+            <%= f.text_field :step_1, class: 'form-control', id: "step_1", value: "HTML"  %>
+            <%= f.label :step_1, "Step 2" %>
+            <%= f.text_field :step_2, class: 'form-control', id: "step_2", value: "CSS"  %>
+            <%= f.label :step_1, "Step 3" %>
+            <%= f.text_field :step_3, class: 'form-control', id: "step_3", value: "JavaScript" %>
+            <%= f.label :step_1, "Step 4" %>
+            <%= f.text_field :step_4, class: 'form-control', id: "step_4", value: "Ruby"  %>
+            <%= f.label :step_1, "Step 5" %>
+            <%= f.text_field :step_5, class: 'form-control', id: "step_5", value: "PHP"  %>
+            <%= f.label :step_1, "Step 6" %>
+            <%= f.text_field :step_6, class: 'form-control', id: "step_6", value: "Git"  %>
+
+            <%= f.submit "このコースで頑張る！", class: "btn btn-primary" %>
+        <% end %>
   </div>
 </div>

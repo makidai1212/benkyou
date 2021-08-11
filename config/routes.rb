@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get '/contact',to: 'static_pages#contact'
 
   resources :projects
-
+  get '/project/:id',to: 'projects#new'
+  post 'projects/:id' => 'projects#create'
 end
