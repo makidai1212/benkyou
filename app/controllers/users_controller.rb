@@ -11,9 +11,9 @@ before_action :admin_user, only: :destroy
   def create 
     @user = User.new(user_params)
     if @user.save 
-      flash[:success] = "User create!"
+      flash[:success] = "学習コースを選択しよう!"
       log_in @user
-      redirect_to @user
+      redirect_to new_project_path
     else
       flash.now[:danger] = "メールアドレスかパスワードの内容が正しくありません"
       render "new"
@@ -32,7 +32,8 @@ before_action :admin_user, only: :destroy
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = "登録を変更しました！"
-      redirect_to @user
+      log_in @user
+      redirect_to new_project_path
     else
       render 'edit'
     end
@@ -45,7 +46,7 @@ before_action :admin_user, only: :destroy
   def destroy 
     @user = User.find(params[:id]).destroy
     flash[:success] = "#{@user.name} を闇に葬りました"
-    redirect_to root_path
+    redirect_to users_path
   end
 
   private

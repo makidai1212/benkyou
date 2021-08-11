@@ -39,4 +39,8 @@
         <td>000-000-0000</td>
       </tr>
     </table>
+
+    <% if current_user %>
+      <%= link_to "勉強計画を練り直す", edit_project_path %>
+    <% end %>
 </div>

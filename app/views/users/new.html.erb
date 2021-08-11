@@ -20,7 +20,8 @@
       <%= f.label :image, "プロフィール画像" %>
       <%= f.file_field :image %>
 
-      <%= f.submit "次へ進む", class: "btn btn-primary" %>
+      <%= f.submit "こちらの内容で登録する", class: "btn btn-primary" ,
+                              data: { confirm: "お前、本当にこれでいいのか？" }%>
     <% end %>
   </div>
 </div>
