@@ -20,11 +20,17 @@ class ProjectsController < ApplicationController
 
 
   def edit
-
+    @project = Project.find_by(user_id: current_user.id)
   end
 
   def update
-
+    @project = Project.find_by(user_id: current_user.id)
+    if @project.update(project_params)
+      flash[:success] = "登録を変更しました！"
+      redirect_to root_path
+    else
+      render 'edit'
+    end
   end
 
   private

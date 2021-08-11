@@ -33,8 +33,7 @@ before_action :admin_user, only: :destroy
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = "登録を変更しました！"
-      log_in @user
-      redirect_to new_project_path
+      redirect_to @user
     else
       render 'edit'
     end
