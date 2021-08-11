@@ -26,6 +26,7 @@ gem 'jquery-rails'
 gem 'font-awesome-sass'
 gem 'fog-aws'
 gem 'dotenv-rails'
+gem 'reform'
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'

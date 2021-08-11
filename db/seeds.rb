@@ -5,5 +5,13 @@ User.create!(name:  "Example User",
   password_confirmation: "foobar",
   admin: true)
 
-# 追加のユーザーをまとめて生成する
-
+  user = User.first
+  user.projects.create!(
+    goal: "web",
+    step_1: "a",
+    step_2: "a",
+    step_3: "a",
+    step_4: "a",
+    step_5: "a",
+    step_6: "a"
+  )
