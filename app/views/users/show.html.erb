@@ -1,26 +1,27 @@
 <% provide(:title, @user.name) %>
 
-<div class="row">
+  <div class="row">
     <section class="user_info">
       <h1>
-      <% if @user.image? %>
-        <%= image_tag @user.image.thumb.url , class: "big-user-icon" %>
+      <% if current_user.image? %>
+        <%= image_tag current_user.image.thumb.url , class: "big-user-icon" %>
       <% else %>
         <%= image_tag "default.jpg", alt: "user-icon", class: "user-icon" %>
       <% end %>
       <br>
-        <%= @user.name %>
+        <%= current_user.name %>
       </h1>
     </section>
-
+  <% if @project %>
     <div class="anim-box">
     <h4><%= "#{@project.goal}" %> コースを選択している！</h4>
     </div>
-
     <table>
       <tr>
         <th>Step 1</th>
-        <td><%= @project.step_1 %></td>
+        <td>
+        <%= @project.step_1 %>
+        </td>
       </tr>
       <tr>
         <th>Step 2</th>
@@ -43,7 +44,38 @@
         <td><%= @project.step_6 %></td>
       </tr>
     </table>
+  <% else %>
+      <div class="anim-box">
+    <h4><%= link_to "ここからコースを選択してくれ！", new_project_path(current_user) %></h4>
+    </div>
 
+    <table>
+      <tr>
+        <th>Step 1</th>
+        <td> - </td>
+      </tr>
+      <tr>
+        <th>Step 2</th>
+        <td> - </td>
+      </tr>
+      <tr>
+        <th>Step 3</th>
+        <td> - </td>
+      </tr>
+      <tr>
+        <th>Step 4</th>
+        <td> - </td>
+      </tr>
+      <tr>
+        <th>Step 5</th>
+        <td> - </td>
+      </tr>
+      <tr>
+        <th>Step 6</th>
+        <td> - </td>
+      </tr>
+    </table>
+  <% end %>
     <% if current_user %>
       <%= link_to "勉強計画を練り直す", edit_project_path %>
     <% end %>
