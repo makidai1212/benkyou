@@ -99,7 +99,7 @@
         </div>
       </div>
         <%= form_with(model: @project, local: true) do |f| %>
- 
+        <div hidden>
             <%= f.label :goal, "goal" %>
             <%= f.text_field :goal, class: 'form-control', id: "goal", value: "web" %>
             <%= f.label :step_1, "Step 1" %>
@@ -114,7 +114,7 @@
             <%= f.text_field :step_5, class: 'form-control', id: "step_5", value: "PHP"  %>
             <%= f.label :step_1, "Step 6" %>
             <%= f.text_field :step_6, class: 'form-control', id: "step_6", value: "Git"  %>
-
+        </div>
             <%= f.submit "このコースで頑張る！", class: "btn btn-primary" %>
         <% end %>
   </div>
