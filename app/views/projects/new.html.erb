@@ -2,7 +2,8 @@
 <h1>学習コース選択</h1>
 
 <div class="row">
-  <div class="col-md-8 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3">
+
       <div class="tab">
         <input type="radio" name="tab" id="meat1" checked>
         <label for="meat1">Webコース</label>
@@ -99,7 +100,7 @@
         </div>
       </div>
         <%= form_with(model: @project, local: true) do |f| %>
- 
+
             <%= f.label :goal, "goal" %>
             <%= f.text_field :goal, class: 'form-control', id: "goal", value: "web" %>
             <%= f.label :step_1, "Step 1" %>
@@ -114,8 +115,8 @@
             <%= f.text_field :step_5, class: 'form-control', id: "step_5", value: "PHP"  %>
             <%= f.label :step_1, "Step 6" %>
             <%= f.text_field :step_6, class: 'form-control', id: "step_6", value: "Git"  %>
-
-            <%= f.submit "このコースで頑張る！", class: "btn btn-primary" %>
+    
+            <%= f.submit "このコースで頑張る", class: "btn btn-primary" %>
         <% end %>
   </div>
 </div>
