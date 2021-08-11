@@ -3,13 +3,13 @@
   <div class="row">
     <section class="user_info">
       <h1>
-      <% if current_user.image? %>
-        <%= image_tag current_user.image.thumb.url , class: "big-user-icon" %>
+      <% if @user.image? %>
+        <%= image_tag @user.image.thumb.url , class: "big-user-icon" %>
       <% else %>
         <%= image_tag "default.jpg", alt: "user-icon", class: "user-icon" %>
       <% end %>
       <br>
-        <%= current_user.name %>
+        <%= @user.name %>
       </h1>
     </section>
   <% if @project %>
