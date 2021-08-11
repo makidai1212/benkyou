@@ -8,6 +8,7 @@ one:
   step_4: MyString
   step_5: MyString
   step_6: MyString
+  user: one
 
 two:
   goal: MyString
@@ -17,3 +18,4 @@ two:
   step_4: MyString
   step_5: MyString
   step_6: MyString
+  user: two

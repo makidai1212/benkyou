@@ -1,17 +1,52 @@
 <% if logged_in? %>
-  <div class="container-fluid">
-    <h1>
-    <% if current_user.image? %>
-      <%= image_tag current_user.image.thumb.url , class: "big-user-icon" %>
-    <% else %>
-      <%= image_tag "default.jpg", alt: "user-icon", class: "user-icon" %>
-    <% end %>
-    <br>
-      <%= current_user.name %>
-    </h1>
+  <div class="row">
+    <section class="user_info">
+      <h1>
+      <% if current_user.image? %>
+        <%= image_tag current_user.image.thumb.url , class: "big-user-icon" %>
+      <% else %>
+        <%= image_tag "default.jpg", alt: "user-icon", class: "user-icon" %>
+      <% end %>
+      <br>
+        <%= current_user.name %>
+      </h1>
+    </section>
+
+    <div class="anim-box">
+    <h4><%= "#{@project.goal}" %> コースを選択している！</h4>
+    </div>
+
+    <table>
+      <tr>
+        <th>Step 1</th>
+        <td>
+        <%= @project.step_1 %>
+        </td>
+      </tr>
+      <tr>
+        <th>Step 2</th>
+        <td><%= @project.step_2 %></td>
+      </tr>
+      <tr>
+        <th>Step 3</th>
+        <td><%= @project.step_3 %></td>
+      </tr>
+      <tr>
+        <th>Step 4</th>
+        <td><%= @project.step_4 %></td>
+      </tr>
+      <tr>
+        <th>Step 5</th>
+        <td><%= @project.step_5 %></td>
+      </tr>
+      <tr>
+        <th>Step 6</th>
+        <td><%= @project.step_6 %></td>
+      </tr>
+    </table>
   </div>
 <% else %>
-  <div class="center jumbotron">
+  <div class="center">
     <h1>Welcome to the Benkyou App</h1>
     <h2>
       This is the home page for the
