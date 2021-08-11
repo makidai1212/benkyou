@@ -11,7 +11,7 @@
         <%= current_user.name %>
       </h1>
     </section>
-
+  <% if @project %>
     <div class="anim-box">
     <h4><%= "#{@project.goal}" %> コースを選択している！</h4>
     </div>
@@ -44,9 +44,10 @@
         <td><%= @project.step_6 %></td>
       </tr>
     </table>
+    <% end %>
   </div>
 <% else %>
-  <div class="center jumbotron">
+  <div class="center">
     <h1>Welcome to the Benkyou App</h1>
     <h2>
       This is the home page for the
