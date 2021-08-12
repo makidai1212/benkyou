@@ -14,7 +14,7 @@
     </section>
   <% if @project %>
     <div class="anim-box">
-    <h4><%="#{@user.name}" %>さんは<%= "#{@project.goal}" %> コースを選択しています</h4>
+    <h4><%= "#{@user.name}" %> さんは <%= "#{@project.goal}" %> コースを選択しています</h4>
     </div>
     <table>
       <tr>
@@ -31,24 +31,38 @@
         <th>Step 3</th>
         <td><%= @project.step_3 %></td>
       </tr>
+      <% if !@project.step_4.empty? %>
       <tr>
         <th>Step 4</th>
         <td><%= @project.step_4 %></td>
       </tr>
+      <% else %>
+      <% end %>
+      <% if !@project.step_5.empty? %>
       <tr>
         <th>Step 5</th>
         <td><%= @project.step_5 %></td>
       </tr>
+      <% else %>
+      <% end %>
+      <% if !@project.step_6.empty? %>
       <tr>
         <th>Step 6</th>
         <td><%= @project.step_6 %></td>
       </tr>
+      <% else %>
+      <% end %>
     </table>
   <% else %>
+    <% if @user.id == current_user.id %>
       <div class="anim-box">
-    <h4><%= link_to "ここからコースを選択してくれ！", new_project_path(current_user) %></h4>
-    </div>
-
+      <h4><%= link_to "ここからコースを選択してくれ！", new_project_path(current_user) %></h4>
+      </div>
+    <% else %>
+      <div class="anim-box">
+      <h4>コースを選択していないみたいだ！</h4>
+      </div>
+    <% end %>
     <table>
       <tr>
         <th>Step 1</th>
@@ -76,7 +90,7 @@
       </tr>
     </table>
   <% end %>
-    <% if current_user %>
+    <% if @user.id == current_user.id %>
       <%= link_to "勉強計画を練り直す", edit_project_path %>
     <% end %>
 </div>

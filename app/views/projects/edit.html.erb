@@ -4,6 +4,7 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_with(model: @project, local: true) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :step_1, "Step 1" %>
       <%= f.text_field :step_1, class: 'form-control', placeholder: @project.step_1 %>
       <%= f.label :step_1, "Step 2" %>

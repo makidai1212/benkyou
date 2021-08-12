@@ -13,7 +13,7 @@
     </section>
   <% if @project %>
     <div class="anim-box">
-    <h4><%="#{current_user.name}" %>さんは<%= "#{@project.goal}" %> コースを選択しています</h4>
+    <h4><%= "#{current_user.name}" %> さんは <%= "#{@project.goal}" %> コースを選択しています</h4>
     </div>
     <table>
       <tr>
@@ -30,22 +30,31 @@
         <th>Step 3</th>
         <td><%= @project.step_3 %></td>
       </tr>
+      <% if !@project.step_4.empty? %>
       <tr>
         <th>Step 4</th>
         <td><%= @project.step_4 %></td>
       </tr>
+      <% else %>
+      <% end %>
+      <% if !@project.step_5.empty? %>
       <tr>
         <th>Step 5</th>
         <td><%= @project.step_5 %></td>
       </tr>
+      <% else %>
+      <% end %>
+      <% if !@project.step_6.empty? %>
       <tr>
         <th>Step 6</th>
         <td><%= @project.step_6 %></td>
       </tr>
+      <% else %>
+      <% end %>
     </table>
   <% else %>
-      <div class="anim-box">
-    <h4><%= link_to "ここからコースを選択してくれ！", new_project_path(current_user), {class: "nav-link"}%></h4>
+    <div class="anim-box">
+    <h4><%= link_to "ここからコースを選択してくれ！", new_project_path(current_user), {class: "nav-link"} %></h4>
     </div>
     <table>
       <tr>
@@ -77,7 +86,7 @@
   </div>
 <% else %>
   <div class="center">
-    <h1>Welcome to the BENKYO App</h1>
+    <h1>BENKYO App</h1>
     <h2>
       This is the home page for the
       Benkyou application.

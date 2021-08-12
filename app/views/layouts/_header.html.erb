@@ -6,7 +6,7 @@
         <li><%= link_to "Home", root_path %></li>
         <% if logged_in? %>
           <li><%= link_to "登録ユーザー", users_path %></li>
-          <li><%= link_to "コース情報", user_path(current_user) %></li>
+          <li><%= link_to "学習コース情報", user_path(current_user) %></li>
           <li><%= link_to "プロフィール編集", edit_user_path(current_user) %></li>
           <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
         <% else %>
