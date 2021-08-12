@@ -41,6 +41,9 @@ before_action :admin_user, only: :destroy
 
   def index 
     @users = User.all.limit(15).page(params[:page])
+    @project1 = Project.where(goal: "web")
+    @project2 = Project.where(goal: "system")
+    @project3 = Project.where(goal: "IT基礎")
   end
 
   def destroy 

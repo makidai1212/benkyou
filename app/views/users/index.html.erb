@@ -1,8 +1,39 @@
 <% provide(:title, 'ユーザー一覧') %>
 <h1>ユーザー一覧</h1>
+<div class="tab">
+  <input type="radio" name="tab" id="meat1" checked>
+  <label for="meat1">Webコース</label>
+  <input type="radio" name="tab" id="meat2">
+  <label for="meat2">システムコース</label>
+  <input type="radio" name="tab" id="meat3">
+  <label for="meat3">IT基礎コース</label>
+  <div class="foods">
+    <ul class="users">
 
-<ul class="users">
-<%= will_paginate %>
-  <%= render @users%>
-<%= will_paginate %>
-</ul>
+        <%= will_paginate %>
+            <% @project1.each do |project1| %>
+              <%= render project1.user %>
+            <% end %>
+        <%= will_paginate %>
+
+    </ul>
+    <ul class="users">
+
+        <%= will_paginate %>
+            <% @project2.each do |project2| %>
+              <%= render project2.user %>
+            <% end %>
+        <%= will_paginate %>
+
+    </ul>
+    <ul class="users">
+
+        <%= will_paginate %>
+            <% @project3.each do |project3| %>
+              <%= render project3.user %>
+            <% end %>
+        <%= will_paginate %>
+
+    </ul>
+  </div>
+</div>
